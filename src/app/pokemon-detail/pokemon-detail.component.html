@@ -1,0 +1,11 @@
+<div *ngIf="pokemonDetails">
+    <h1>{{ pokemonDetails.name }}</h1>
+    <img src="{{ pokemonDetails.sprites.front_default }}" height="300">
+    <img src="{{ pokemonDetails.sprites.back_default }}" height="300">
+    <h3>Height: {{ pokemonDetails.height }}</h3>
+    <h3>Weight: {{ pokemonDetails.weight }}</h3>
+    <div>
+        <a routerLink="/detail/{{ pokemonDetails.id - 1 }}">Previous Pokemon</a>
+        <a routerLink="/detail/{{ pokemonDetails.id + 1 }}">Next Pokemon</a>
+    </div>
+</div>

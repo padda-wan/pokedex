@@ -14,6 +14,7 @@ export interface AllPokemonResponse {
 interface Pokemon {
   name: string
   url: string
+  id?: string
 }
 
 @Injectable({
@@ -26,13 +27,16 @@ export class PokemonService {
   constructor(private http: HttpClient) {}
 
   getPokemon(url?: string) {
-    debugger
     if (url){
       return this.http.get<AllPokemonResponse>(url);
     }
     if (!url){
       return this.http.get<AllPokemonResponse>(this.defaultUrl);
     }
+  }
+
+  getPokemonDetail(id: string) {
+    return this.http.get<any>(`${this.defaultUrl}/${id}`)
   }
   
 }

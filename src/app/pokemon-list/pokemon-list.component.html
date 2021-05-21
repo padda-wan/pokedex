@@ -5,7 +5,7 @@
 
 <ul *ngFor="let pokemon of CurrentPokemonList">
     <li>
-        <a href="">{{ pokemon.name }}</a>
+        <a routerLink="/detail/{{ pokemon.id }}/">{{ pokemon.name }}</a>
     </li>
 </ul>
 

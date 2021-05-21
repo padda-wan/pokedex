@@ -20,7 +20,11 @@ export class PokemonListComponent implements OnInit {
   constructor( private pokemonService: PokemonService ) {}
 
   populateData(data: AllPokemonResponse) {
-    this.CurrentPokemonList = data.results
+
+    this.CurrentPokemonList = data.results.map(obj => {
+      obj.id = obj.url.split('/')[6]
+      return obj
+    })
     this.NextUrl = data.next
     this.PreviousUrl = data.previous
   }
