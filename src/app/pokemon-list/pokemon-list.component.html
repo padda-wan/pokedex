@@ -1,0 +1,13 @@
+<h1>List of pokemans</h1>
+
+<button (click)="showPreviousPokemon()">Previous</button>
+<button (click)="showNextPokemon()">Next</button>
+
+<ul *ngFor="let pokemon of CurrentPokemonList">
+    <li>
+        <a href="">{{ pokemon.name }}</a>
+    </li>
+</ul>
+
+<button (click)="showPreviousPokemon()">Previous</button>
+<button (click)="showNextPokemon()">Next</button>
