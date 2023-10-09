@@ -1,7 +1,7 @@
 'use client'
 
 import * as THREE from 'three'
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, Suspense } from 'react'
 import { Canvas, useFrame, ThreeElements, useLoader } from '@react-three/fiber'
 import Pokedex from './pokedex'
 
@@ -27,12 +27,14 @@ function Box(props: ThreeElements['mesh']) {
 
 export default function Home() {
   return (
-    <Canvas>
-      <Pokedex />
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
-      <Box position={[-1.2, 0, 0]} />
-      <Box position={[1.2, 0, 0]} />
-    </Canvas>
+    <div className='min-h-full h-screen'>
+      <Canvas className='min-h-full h-screen'>
+        <Suspense fallback={null}>
+          <Pokedex />
+          <ambientLight />
+          <pointLight position={[10, 10, 10]} />
+        </Suspense>
+      </Canvas>
+    </div>
   )
 }

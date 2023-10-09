@@ -6,7 +6,7 @@ export default function Pokedex(props: any) {
   const { nodes, materials } = useGLTF('/models/pokedex_3d_model.glb')
   return (
     <group {...props} dispose={null}>
-    <group rotation={[-0.381, 0, 0]}>
+    <group rotation={[0, 0, 0]} position={[-1.5, 0.5, -1]}>
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
         <mesh
           castShadow
